@@ -1,0 +1,7 @@
+menu.delete.document=Supprimer
+menu.share.document=Partager
+title.share.document=Partager le document
+menu.view.document=Voir modifications
+menu.save.document=Enregistrer
+document.no=Ce document n'existe pas :(
+placeholder.field.share.document=Saisissez une adresse email

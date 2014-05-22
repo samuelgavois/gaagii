@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 35
+/svn/Ecrisle/!svn/ver/2/trunk/tasks
+END
+less.js
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/Ecrisle/!svn/ver/2/trunk/tasks/less.js
+END
+requirejs.js
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/Ecrisle/!svn/ver/2/trunk/tasks/requirejs.js
+END
+dustjs.js
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/Ecrisle/!svn/ver/2/trunk/tasks/dustjs.js
+END
+makara.js
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/Ecrisle/!svn/ver/2/trunk/tasks/makara.js
+END
+copyto.js
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/Ecrisle/!svn/ver/2/trunk/tasks/copyto.js
+END
+i18n.js
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/Ecrisle/!svn/ver/2/trunk/tasks/i18n.js
+END
+jshint.js
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/Ecrisle/!svn/ver/2/trunk/tasks/jshint.js
+END
+mochacli.js
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/Ecrisle/!svn/ver/2/trunk/tasks/mochacli.js
+END
+clean.js
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/Ecrisle/!svn/ver/2/trunk/tasks/clean.js
+END

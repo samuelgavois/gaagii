@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/Ecrisle/!svn/ver/2/trunk/public/components/dustjs-linkedin-helpers/dist
+END
+LICENSE
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/Ecrisle/!svn/ver/2/trunk/public/components/dustjs-linkedin-helpers/dist/LICENSE
+END
+dust-helpers.js
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/Ecrisle/!svn/ver/2/trunk/public/components/dustjs-linkedin-helpers/dist/dust-helpers.js
+END
+dust-helpers.min.js
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/Ecrisle/!svn/ver/2/trunk/public/components/dustjs-linkedin-helpers/dist/dust-helpers.min.js
+END

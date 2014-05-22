@@ -1,0 +1,44 @@
+{>"layouts/document" /}
+
+{<body}
+	{?document}
+	<div class="large-12 columns">
+		<div class="large-12 columns menu-buttons">
+			<a class="button radius alert tiny" id="ecrisle-button-delete-document" href="#" data-id="{document._id}" data-csrf="{_csrf}" data-action="/delete-document" data-method="DELETE">{@pre type="content" key="menu.delete.document"/}</a>
+			<a class="button radius tiny" id="ecrisle-button-share-document" href="#" data-reveal-id="ecrisle-popup-share-document">{@pre type="content" key="menu.share.document"/}</a>
+			<a class="button radius tiny" id="ecrisle-button-view-document" href="#">{@pre type="content" key="menu.view.document"/}</a>
+			<a class="button radius tiny" id="ecrisle-button-save-document" href="#">{@pre type="content" key="menu.save.document"/}</a>
+		</div>
+	</div>
+	<div class="large-12 columns">
+		<form method="POST" action="/save-document" id="ecrisle-form-document">
+			<input type="hidden" name="_id" value="{document._id}"/>
+			<input type="hidden" name="_csrf" value="{_csrf}">
+			<input type="text" name="name" value="{document.name}">
+			<textarea id="ecrisle-textarea-document" name="content">{document.content}</textarea>
+		</form>
+		<div id="ecrisle-container-view-document"></div>
+		<script type="text/javascript">
+			Ecrisle.layout.document.name = "{document.name}";
+			Ecrisle.layout.document.content = "{document.content}";
+			Ecrisle.layout.document.initialContent = "{document.initialContent}";
+		</script>
+	</div>
+	
+	<div id="ecrisle-popup-share-document" class="reveal-modal" data-reveal>
+  		<h4>{@pre type="content" key="title.share.document"/}</h4>
+  		<form method="POST" action="/share-document" id="ecrisle-form-share-document">
+			<div class="large-10 columns">
+			<input type="hidden" name="_csrf" value="{_csrf}">
+			<input type="hidden" name="_id" value="{document._id}"/>
+			<input type="text" name="email" placeHolder="{@pre type="content" key="placeholder.field.share.document"/}" value="">
+			</div>
+			<div class="large-2 columns text-right">
+				<a class="button radius tiny" id="ecrisle-popup-button-share-document" href="#">{@pre type="content" key="menu.share.document"/}</a>
+			</div>
+		</form>
+	</div>
+	{:else}
+		{@pre type="content" key="document.no"/}
+	{/document}
+{/body}

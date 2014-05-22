@@ -1,0 +1,107 @@
+K 25
+svn:wc:ra_dav:version-url
+V 39
+/svn/Ecrisle/!svn/ver/2/trunk/public/js
+END
+.jshintignore
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/Ecrisle/!svn/ver/2/trunk/public/js/.jshintignore
+END
+modernizr.js
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/Ecrisle/!svn/ver/2/trunk/public/js/modernizr.js
+END
+onload-tools.js
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/Ecrisle/!svn/ver/2/trunk/public/js/onload-tools.js
+END
+onload-documents.js
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/Ecrisle/!svn/ver/2/trunk/public/js/onload-documents.js
+END
+jquery.js
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/Ecrisle/!svn/ver/2/trunk/public/js/jquery.js
+END
+app.js
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/Ecrisle/!svn/ver/2/trunk/public/js/app.js
+END
+placeholder.js
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/Ecrisle/!svn/ver/2/trunk/public/js/placeholder.js
+END
+onload-writer.js
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/Ecrisle/!svn/ver/2/trunk/public/js/onload-writer.js
+END
+.jshintrc
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/Ecrisle/!svn/ver/2/trunk/public/js/.jshintrc
+END
+jquery.cookie.js
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/Ecrisle/!svn/ver/2/trunk/public/js/jquery.cookie.js
+END
+onload-document.js
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/Ecrisle/!svn/ver/2/trunk/public/js/onload-document.js
+END
+foundation.min.js
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/Ecrisle/!svn/ver/2/trunk/public/js/foundation.min.js
+END
+diff_match_patch_uncompressed.js
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/Ecrisle/!svn/ver/2/trunk/public/js/diff_match_patch_uncompressed.js
+END
+onload-common.js
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/Ecrisle/!svn/ver/2/trunk/public/js/onload-common.js
+END
+diff_match_patch_test.js
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/Ecrisle/!svn/ver/2/trunk/public/js/diff_match_patch_test.js
+END
+diff_match_patch.js
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/Ecrisle/!svn/ver/2/trunk/public/js/diff_match_patch.js
+END
+fastclick.js
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/Ecrisle/!svn/ver/2/trunk/public/js/fastclick.js
+END

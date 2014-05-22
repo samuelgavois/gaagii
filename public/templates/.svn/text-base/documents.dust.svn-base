@@ -1,0 +1,38 @@
+{>"layouts/documents" /}
+
+{<body}
+	<div class="large-12 columns">
+		<div class="large-7 columns"><h1>{@pre type="content" key="title"/}</h1></div>
+		<div class="large-5 columns menu-buttons">
+			<a class="button radius tiny" id="ecrisle-button-create-document" href="#" data-reveal-id="ecrisle-popup-create-document">{@pre type="content" key="menu.create.document"/}</a>
+		</div>
+	</div>
+	<div class="large-12 columns">
+		<div class="documents">
+            {?documents}
+			<ul class="nm-np inline">
+				{#documents}
+				<li>
+					<a href="/document/{._id}">{.name}</a>
+				</li>
+				{/documents}
+			</ul>
+			{:else}
+                {@pre type="content" key="documents.no"/}
+            {/documents}
+		</div>
+	</div>
+	
+	<div id="ecrisle-popup-create-document" class="reveal-modal" data-reveal>
+  		<h4>{@pre type="content" key="menu.create.document"/}</h4>
+  		<form method="POST" action="/create-document" id="ecrisle-form-document">
+			<div class="large-10 columns">
+			<input type="hidden" name="_csrf" value="{_csrf}">
+			<input type="text" name="name" placeHolder="{@pre type="content" key="placeholder.field.document"/}" value="">
+			</div>
+			<div class="large-2 columns text-right">
+				<a class="button radius tiny" id="ecrisle-popup-button-create-document" href="#">{@pre type="content" key="button.create.document"/}</a>
+			</div>
+		</form>
+	</div>
+{/body}

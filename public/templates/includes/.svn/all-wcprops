@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/Ecrisle/!svn/ver/2/trunk/public/templates/includes
+END
+header-writer.dust
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/Ecrisle/!svn/ver/2/trunk/public/templates/includes/header-writer.dust
+END
+header-document.dust
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/Ecrisle/!svn/ver/2/trunk/public/templates/includes/header-document.dust
+END
+header-documents.dust
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/Ecrisle/!svn/ver/2/trunk/public/templates/includes/header-documents.dust
+END
+header.dust
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/Ecrisle/!svn/ver/2/trunk/public/templates/includes/header.dust
+END
+header-meta.dust
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/Ecrisle/!svn/ver/2/trunk/public/templates/includes/header-meta.dust
+END
+footer.dust
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/Ecrisle/!svn/ver/2/trunk/public/templates/includes/footer.dust
+END

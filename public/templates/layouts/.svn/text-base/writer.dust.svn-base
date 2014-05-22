@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	{>"includes/header-meta"/}
+	{>"includes/header-writer"/}
+</head>
+<body>
+	{>"includes/header"/}
+	
+	<section id="wrapper" class="row">
+		{+body /}
+	</section>
+	
+	{>"includes/footer"/}
+	
+	<script data-main="/js/app" src="components/requirejs/require.js"></script>
+
+	<script src="/js/jquery.js"></script>
+	<script src="/js/foundation.min.js"></script>
+	<script>
+		$(document).foundation();
+	</script>
+</body>
+</html>

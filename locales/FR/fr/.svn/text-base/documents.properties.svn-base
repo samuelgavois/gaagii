@@ -1,0 +1,5 @@
+title=Liste des documents
+button.create.document=Créer
+menu.create.document=Créer un document
+placeholder.field.document=Document sans titre
+documents.no=Il n'y a pas de documents :(

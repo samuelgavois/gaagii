@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/Ecrisle/!svn/ver/2/trunk/locales/US/en/errors
+END
+500.properties
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/Ecrisle/!svn/ver/2/trunk/locales/US/en/errors/500.properties
+END
+404.properties
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/Ecrisle/!svn/ver/2/trunk/locales/US/en/errors/404.properties
+END
+503.properties
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/Ecrisle/!svn/ver/2/trunk/locales/US/en/errors/503.properties
+END

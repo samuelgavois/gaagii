@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	{>"includes/header-meta"/}
+</head>
+<body>
+	{>"includes/header"/}
+	
+	<section id="wrapper" class="row">
+		{+body /}
+	</section>
+	
+	{>"includes/footer"/}
+</body>
+</html>
