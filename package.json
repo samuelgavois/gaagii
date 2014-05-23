@@ -1,7 +1,7 @@
 {
-  "name": "oklami",
+  "name": "gaagii",
   "version": "0.1.0",
-  "description": "Test application Oklami",
+  "description": "Application Gaagii",
   "author": "Samuel Gavois",
   "main": "index.js",
   "scripts": {
