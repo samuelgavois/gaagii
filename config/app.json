@@ -1,21 +1,22 @@
 {
+	"url_server": "http://p-gaagii-c9-samuelgavois.c9.io",
 	"databaseConfig": {
-        "host": "127.0.0.1",
+        "host": "ks3310836.kimsufi.com",
         "database": "gaagii"
     },
 	"locale": "fr_FR",
 	"smtp": {
 		"host": "ks3310836.kimsufi.com",
-		"secureConnection": true,
-		"port": 465,
+		"secureConnection": false,
+		"port": 25,
 		"auth": {
 			"user": "contact@samuelgavois.fr",
 			"pass": "akhenaton2"
 		}
 	},
 	"sender": {
-		"name": "Samuel",
-		"email": "samuel.gavois@moninfo.com"
+		"name": "Gaagii",
+		"email": "contact@gaagii.com"
 	}
 // "host": "localhost",
 //

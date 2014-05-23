@@ -35,7 +35,7 @@ app.requestAfterRoute = function requestAfterRoute(server) {
 
 
 if (require.main === module) {
-    kraken.create(app).listen(function (err, server) {
+    kraken.create(app).listen(process.env.PORT, process.env.IP, function (err, server) {
         if (err) {
             console.error(err.stack);
         }

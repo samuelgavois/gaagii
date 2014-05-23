@@ -75,25 +75,37 @@ module.exports = function (app) {
     });
 	
 	app.post('/share-document', function (req, res) {
-		var smtpTransport = nodemailer.createTransport("SMTP", nconf.get("smtp"));
-		var mailOptions = {
-			from: "Sam <contact@samuelgavois.fr>", // sender address
-			to: "samuel.gavois@moninfo.com", // list of receivers
-			subject: "Hello", // Subject line
-			text: "Hello world", // plaintext body
-			html: "<b>Hello world</b>" // html body
-		}
+	    var documentShare = {_id: req.body._id};
+	    Document.findOne({_id:req.body._id}).exec(function (err, doc) {
+            if (err) {
+                console.log(err);
+            }
+            
+            var _urlDocument = nconf.get("url_server")+"/"+"document"+"/"+req.body._id;
+            var _sender = nconf.get("sender");
+            
+            var smtpTransport = nodemailer.createTransport("SMTP", nconf.get("smtp"));
+    		var mailOptions = {
+    			from: _sender.name+" <"+_sender.email+">", // sender address
+    			to: req.body.email, // list of receivers
+    			subject: "Gaagii - Partage d'un document", // Subject line
+    			text: "Gaagii - Partage du document "+doc.name, // plaintext body
+    			html: "<b>Gaagii</b> - Partage du document "+doc.name+"<p>"+_urlDocument+"</p>" // html body
+    		}
+    		
+    		smtpTransport.sendMail(mailOptions, function(error, response){
+    			if(error){
+    				console.log(error);
+    			}else{
+    				console.log("Message ("+response.message+") sent to "+req.body.email+" for document id "+req.body._id);
+    			}
+    
+    			// if you don't want to use this transport object anymore, uncomment following line
+    			//smtpTransport.close(); // shut down the connection pool, no more messages
+    		});
+	    });  
+	    
 		
-		smtpTransport.sendMail(mailOptions, function(error, response){
-			if(error){
-				console.log(error);
-			}else{
-				console.log("Message sent: " + response.message);
-			}
-
-			// if you don't want to use this transport object anymore, uncomment following line
-			//smtpTransport.close(); // shut down the connection pool, no more messages
-		});
 
 		/*var documentCreate = {name: req.body.name, content:""};
 		Document.create(documentCreate, function (err, doc) {

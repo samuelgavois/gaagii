@@ -7,7 +7,7 @@ var passport = require('passport'), GoogleStrategy = require('passport-google').
 var User = require('../models/user');
 
 passport.use(new GoogleStrategy(
-	{returnURL : 'http://ks3310836.kimsufi.com:8000/auth/google/return', realm : 'http://ks3310836.kimsufi.com:8000/'},
+	{returnURL : nconf.get("url_server")+'/auth/google/return', realm : nconf.get("url_server")},
 	function(identifier, profile, done) {
 		console.log(identifier);
 		console.log(profile);
