@@ -4,19 +4,18 @@
         "database": "ecrisle"
     },
 	"locale": "fr_FR",
-	"gmail": {
-		/*"host": "smtp.gmail.com",
+	"smtp": {
+		"host": "ks3310836.kimsufi.com",
 		"secureConnection": true,
-		"port": 465,*/
-		"service": "Gmail",
+		"port": 465,
 		"auth": {
-			"user": "sg.moninfo@gmail.com",
-			"pass": "akhenaton28021998"
+			"user": "contact@samuelgavois.fr",
+			"pass": "akhenaton2"
 		}
 	},
 	"sender": {
 		"name": "Samuel",
-		"email": "external.z20sgavo@btwin.com"
+		"email": "samuel.gavois@moninfo.com"
 	}
 // "host": "localhost",
 //
