@@ -1,7 +1,7 @@
 {
 	"databaseConfig": {
         "host": "127.0.0.1",
-        "database": "ecrisle"
+        "database": "gaagii"
     },
 	"locale": "fr_FR",
 	"smtp": {
