@@ -75,9 +75,9 @@ module.exports = function (app) {
     });
 	
 	app.post('/share-document', function (req, res) {
-		var smtpTransport = nodemailer.createTransport("SMTP", nconf.get("gmail"));
+		var smtpTransport = nodemailer.createTransport("SMTP", nconf.get("smtp"));
 		var mailOptions = {
-			from: "Sam <external.z20sgavo@btwin.com>", // sender address
+			from: "Sam <contact@samuelgavois.fr>", // sender address
 			to: "samuel.gavois@moninfo.com", // list of receivers
 			subject: "Hello", // Subject line
 			text: "Hello world", // plaintext body
