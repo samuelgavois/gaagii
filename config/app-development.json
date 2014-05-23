@@ -1,0 +1,64 @@
+{
+	"url_server": "http://p-gaagii-c9-samuelgavois.c9.io",
+	"databaseConfig": {
+        "host": "ks3310836.kimsufi.com",
+        "database": "gaagii"
+    },
+	"locale": "fr_FR",
+	"smtp": {
+		"host": "ks3310836.kimsufi.com",
+		"secureConnection": false,
+		"port": 25,
+		"auth": {
+			"user": "contact@samuelgavois.fr",
+			"pass": "akhenaton2"
+		}
+	},
+	"sender": {
+		"name": "Gaagii",
+		"email": "contact@gaagii.com"
+	}
+// "host": "localhost",
+//
+// "port": 8000,
+//
+// "i18n": {
+//     "fallback": "en-US",
+//     "contentPath": "path:./locales"
+// },
+//
+// "routes": {
+//     "routePath": "path:./controllers"
+// },
+//
+//  "view engines": {
+//      "js": {
+//         "module": "adaro",
+//         "settings": {
+//             "helpers": null,
+//             "stream": false
+//         }
+//      },
+//
+//     "dust": {
+//         "module": "adaro",
+//         "settings": {
+//             "helpers": null,
+//             "stream": false
+//         }
+//     }
+// },
+// "express": {
+//     "x-powered-by": false,
+//     "trust proxy": false,
+//     "jsonp callback name": null,
+//     "json replacer": null,
+//     "json spaces": 0,
+//     "case sensitive routing": false,
+//     "strict routing": false,
+//     "view cache": true,
+//     "view engine": "js",
+//     "views": "path:./.build/templates"
+// }
+
+}
