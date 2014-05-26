@@ -1,3 +1,3 @@
-# oklami
+# Gaagii
 
-Test application Oklami
+Gaagii - Share and valid documents
