@@ -152,11 +152,12 @@
 		
 		shareDocument : function() {
 			var $form = $("#ecrisle-form-share-document");
-			if ($form.find("[name='name']").val() != "") {
+			if ($form.find("[name='name']").val() != "" && $form.find("[name='email']").val() != "") {
+			    var _emails = $form.find("[name='email']").val().split(",");
 				$.ajax({
 					url: $form.attr('action'),
 					type: $form.attr('method'),
-					data: {_csrf:$form.find("[name='_csrf']").val(), _id:$form.find("[name='_id']").val(), email:$form.find("[name='email']").val()},
+					data: {_csrf:$form.find("[name='_csrf']").val(), _id:$form.find("[name='_id']").val(), emails:_emails},
 					success: function(doc) {
 						document.location.href = "/document/"+doc._id;
 					}
