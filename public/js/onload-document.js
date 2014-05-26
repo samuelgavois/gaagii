@@ -1,5 +1,5 @@
 (function($) {
-	Ecrisle.layout.document = { 
+	Gaagii.layout.document = { 
 		changed : false,
 		history : new Array(),
 		name: null,
@@ -7,24 +7,24 @@
 		initialContent : null,
 		
 		init : function() {
-			var $form = $("#ecrisle-form-document");
+			var $form = $("#gaagii-form-document");
 
 			//BEGIN DECLARATION DE TOUS LES EVENTS
 			//Partager le document
-			$("#ecrisle-button-share-document").bind("click.ecrisle-button-share-document", function(event) {
+			$("#gaagii-button-share-document").bind("click.gaagii-button-share-document", function(event) {
 				setInterval(function() {
-					var $form = $("#ecrisle-form-share-document");
+					var $form = $("#gaagii-form-share-document");
 					$form.find("[name='name']").focus();
 				}, 500);
 			});
 			
 			//Enregistrement du document
-			$("#ecrisle-button-save-document").bind("click.ecrisle-button-save-document", function(event) {
-				Ecrisle.layout.document.saveDocument();
+			$("#gaagii-button-save-document").bind("click.gaagii-button-save-document", function(event) {
+				Gaagii.layout.document.saveDocument();
 			});
 			
 			//Supprimer le document
-			$("#ecrisle-button-delete-document").bind("click.ecrisle-button-delete-document", function(event) {
+			$("#gaagii-button-delete-document").bind("click.gaagii-button-delete-document", function(event) {
 				$this = $(this);
 				$.ajax({
 					url: $this.attr('data-action'),
@@ -37,16 +37,16 @@
 			});
 			
 			//Voir les modifications sur le document
-			$("#ecrisle-button-view-document").bind("click.ecrisle-button-view-document", function(event) {
+			$("#gaagii-button-view-document").bind("click.gaagii-button-view-document", function(event) {
 				var dmp = new diff_match_patch();
 				var diff = dmp.diff_main(self.initialContent, self.content, true);
 				dmp.diff_cleanupSemantic(diff);
 				var ds = dmp.diff_prettyHtml(diff);
-				$("#ecrisle-container-view-document").html(ds);
+				$("#gaagii-container-view-document").html(ds);
 			});
 			
 			//Submit du formulaire avec le contenu du document
-			$("#ecrisle-form-document").on('submit', function(event) {
+			$("#gaagii-form-document").on('submit', function(event) {
 				event.preventDefault();
 				event.stopPropagation();
 				return false;
@@ -62,19 +62,19 @@
 			});
 			
 			//Submit du formulaire
-			$("#ecrisle-form-share-document").on('submit', function() {
-				Ecrisle.layout.document.shareDocument();
+			$("#gaagii-form-share-document").on('submit', function() {
+				Gaagii.layout.document.shareDocument();
 				return false;
 			});
-			$("#ecrisle-popup-button-share-document").bind("click.ecrisle-popup-button-share-document", function(event) {
-				$("#ecrisle-form-share-document").submit();
+			$("#gaagii-popup-button-share-document").bind("click.gaagii-popup-button-share-document", function(event) {
+				$("#gaagii-form-share-document").submit();
 			});
 			//END DECLARATION DE TOUS LES EVENTS
 			
-			self.content = $("#ecrisle-textarea-document").val();
+			self.content = $("#gaagii-textarea-document").val();
 			
 			var tiny = tinymce.init({
-				selector: '#ecrisle-textarea-document',
+				selector: '#gaagii-textarea-document',
 				statusbar: false,
 				theme: "modern",
 				content_css: "/css/tinymce.content.css"+"?ver="+new Date().getTime(),
@@ -88,8 +88,8 @@
 				setup : function(ed){
 					ed.on('change', function(e){
 						if (e.lastLevel != null) {
-							Ecrisle.layout.document.changed = true;
-							/*Ecrisle.layout.writer.saveDocument();
+							Gaagii.layout.document.changed = true;
+							/*Gaagii.layout.writer.saveDocument();
 
 							var dmp = new diff_match_patch();
 							var diff = dmp.diff_main(e.lastLevel.content, e.level.content, true);
@@ -98,8 +98,8 @@
 							}
 							var patch_list = dmp.patch_make(e.lastLevel.content, e.level.content, diff);
 							var patch_text = dmp.patch_toText(patch_list)
-							Ecrisle.layout.writer.history.push(patch_text);
-							console.log(Ecrisle.layout.writer.history);*/
+							Gaagii.layout.writer.history.push(patch_text);
+							console.log(Gaagii.layout.writer.history);*/
 						}
 					});
 				}
@@ -113,22 +113,22 @@
 			
 			
 
-			//setInterval("Ecrisle.layout.document.saveDocumentByInterval()", 5000);
+			//setInterval("Gaagii.layout.document.saveDocumentByInterval()", 5000);
 		},
 		
 		isChanged : function() {
-			var $form = $("#ecrisle-form-document");
-			return ((Ecrisle.layout.document.changed) || (Ecrisle.layout.document.name != $form.find("[name='name']").val()));
+			var $form = $("#gaagii-form-document");
+			return ((Gaagii.layout.document.changed) || (Gaagii.layout.document.name != $form.find("[name='name']").val()));
 		},
 
 		saveDocumentByInterval : function() {
 			if (tinyMCE.activeEditor != null) {
-				Ecrisle.layout.document.saveDocument();
+				Gaagii.layout.document.saveDocument();
 			}
 		},
 		
 		saveDocument : function() {
-			if (Ecrisle.layout.document.isChanged()) {
+			if (Gaagii.layout.document.isChanged()) {
 				var dmp = new diff_match_patch();
 				var oldcontent = self.content;
 				var newcontent = tinyMCE.activeEditor.getContent();
@@ -140,7 +140,7 @@
 				var patch_text = dmp.patch_toText(patch_list)
 						
 				//$("#writer").val(tinyMCE.activeEditor.getContent());
-				var $form = $("#ecrisle-form-document");
+				var $form = $("#gaagii-form-document");
 				$.ajax({
 					url: "/save-document",
 					type: "POST",
@@ -151,7 +151,7 @@
 		},
 		
 		shareDocument : function() {
-			var $form = $("#ecrisle-form-share-document");
+			var $form = $("#gaagii-form-share-document");
 			if ($form.find("[name='name']").val() != "" && $form.find("[name='email']").val() != "") {
 			    var _emails = $form.find("[name='email']").val().split(",");
 				$.ajax({
@@ -166,9 +166,9 @@
 		}
 		
 	};
-	var self = Ecrisle.layout.document;
+	var self = Gaagii.layout.document;
 })($);
 $(window).ready(function(){
-	Ecrisle.layout.document.init();
+	Gaagii.layout.document.init();
 	
 });

@@ -1,7 +1,0 @@
-{>"layouts/master" /}
-
-{<body}
-	<div class="large-12 columns">
-		<h1>Article {id}</h1>
-	</div>
-{/body}

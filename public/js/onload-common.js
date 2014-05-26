@@ -1,4 +1,4 @@
-var Ecrisle = {
+var Gaagii = {
 	context : {
 		ajaxTimeout : 8000,
 		reloadPage : false
@@ -9,15 +9,15 @@ var Ecrisle = {
 };
 
 (function($) {
-	Ecrisle.layout.common = { 
+	Gaagii.layout.common = { 
 		init : function() {
 			
 		}
 	};
-	var self = Ecrisle.layout.common;
+	var self = Gaagii.layout.common;
 })($);
 $(window).ready(function(){
-	Ecrisle.layout.common.init();
+	Gaagii.layout.common.init();
 });
 	
 Array.prototype.unset = function(val){

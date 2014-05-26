@@ -1,29 +1,29 @@
 (function($) {
-	Ecrisle.layout.documents = { 
+	Gaagii.layout.documents = { 
 		init : function() {
 			//BEGIN DECLARATION DE TOUS LES EVENTS
 			//Création du document
-			$("#ecrisle-button-create-document").bind("click.ecrisle-button-create-document", function(event) {
+			$("#gaagii-button-create-document").bind("click.gaagii-button-create-document", function(event) {
 				setInterval(function() {
-					var $form = $("#ecrisle-form-document");
+					var $form = $("#gaagii-form-document");
 					$form.find("[name='name']").focus();
 				}, 500);
 			});
 			
 			//Submit du formulaire
-			$("#ecrisle-form-document").on('submit', function() {
-				Ecrisle.layout.documents.createDocument();
+			$("#gaagii-form-document").on('submit', function() {
+				Gaagii.layout.documents.createDocument();
 				return false;
 			});
-			$("#ecrisle-popup-button-create-document").bind("click.ecrisle-popup-button-create-document", function(event) {
-				$("#ecrisle-form-document").submit();
+			$("#gaagii-popup-button-create-document").bind("click.gaagii-popup-button-create-document", function(event) {
+				$("#gaagii-form-document").submit();
 			});
 			//END DECLARATION DE TOUS LES EVENTS
 			
 		},
 		
 		createDocument : function() {
-			var $form = $("#ecrisle-form-document");
+			var $form = $("#gaagii-form-document");
 			if ($form.find("[name='name']").val() != "") {
 				
 				$.ajax({
@@ -37,9 +37,9 @@
 			}
 		}
 	};
-	var self = Ecrisle.layout.documents;
+	var self = Gaagii.layout.documents;
 })($);
 $(window).ready(function(){
-	Ecrisle.layout.documents.init();
+	Gaagii.layout.documents.init();
 	
 });

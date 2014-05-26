@@ -84,36 +84,32 @@ module.exports = function (app) {
             var _urlDocument = nconf.get("url_server")+"/"+"document"+"/"+req.body._id;
             var _sender = nconf.get("sender");
             var _emails = req.body.emails;
-            console.log(_emails);
             var smtpTransport = nodemailer.createTransport("SMTP", nconf.get("smtp"));
             
             for(var i=0;i<_emails.length;i++) {
         		var mailOptions = {
-        			from: _sender.name+" <"+_sender.email+">", // sender address
-        			to: _emails[i], // list of receivers
-        			subject: "Gaagii - Partage d'un document", // Subject line
-        			text: "Gaagii - Partage du document "+doc.name, // plaintext body
-        			html: "<b>Gaagii</b> - Partage du document "+doc.name+"<p>"+_urlDocument+"</p>" // html body
+        			from: _sender.name+" <"+_sender.email+">",
+        			to: _emails[i],
+        			subject: "Gaagii - Partage d'un document",
+        			text: "Gaagii - Partage du document "+doc.name,
+        			html: "<b>Gaagii</b> - Partage du document "+doc.name+"<p>"+_urlDocument+"</p>"
         		}
         		
         		smtpTransport.sendMail(mailOptions, function(error, response){
         			if(error){
         				console.log(error);
         			}else{
-        				
-        				
-        				if (i == _emails.length-1) {
-        				    console.log("Message sent for "+_emails.length+" emails for document id "+req.body._id);
-        				
-            				res.writeHead(200, { 'Content-Type': 'application/json' });
-                            res.end();
-        				}
+    				    //console.log("Message sent (emails : "+_emails.length+") for document id "+req.body._id);
         			}
         
         			// if you don't want to use this transport object anymore, uncomment following line
         			//smtpTransport.close(); // shut down the connection pool, no more messages
         		});
             }
+            
+			res.writeHead(200, { 'Content-Type': 'application/json' });
+			res.write(JSON.stringify(doc));
+            res.end();
 	    });  
 	    
 		
