@@ -1,5 +1,5 @@
 {
-	"url_server": "http://ks3310836.kimsufi.com:8000",
+	"url_server": "http://gaagii.herokuapp.com",
 	"databaseConfig": {
         "host": "ks3310836.kimsufi.com",
         "database": "gaagii"
