@@ -8,18 +8,38 @@
 		</div>
 	</div>
 	<div class="large-12 columns">
-		<div class="documents">
-            {?documents}
-			<ul class="nm-np inline">
-				{#documents}
-				<li>
-					<a href="/document/{._id}">{.name}</a>
-				</li>
-				{/documents}
-			</ul>
-			{:else}
-                {@pre type="content" key="documents.no"/}
-            {/documents}
+	    <div class="large-2 columns">
+	        <div class="panel">
+	            Dossiers
+	        </div>
+	    </div>
+	    <div class="large-10 columns">
+    		<div class="documents panel radius">
+                {?documents}
+                <table style="width:100%;">
+                    <thead>
+                        <tr>
+                            <th width="200"></th>
+                            <th>Titre</th>
+                            <th width="150">Création</th>
+                            <th width="150">Actif</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {#documents}
+                        <tr>
+                            <td></td>
+                            <td><a href="/document/{._id}">{.name}</a></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        {/documents}
+                    </tbody>
+                </table>
+    			{:else}
+                    {@pre type="content" key="documents.no"/}
+                {/documents}
+    		</div>
 		</div>
 	</div>
 	
