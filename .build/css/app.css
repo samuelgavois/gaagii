@@ -1,0 +1,24 @@
+/* line 1, /var/lib/stickshift/537cbe774382ec90ce0000af/app-root/data/869631/app */
+.menu-buttons {
+  text-align: right;
+  margin-top: 10px;
+  padding-right: 0px;
+}
+/* line 2, /var/lib/stickshift/537cbe774382ec90ce0000af/app-root/data/869631/app */
+.menu-buttons .button {
+  margin-left: 5px;
+}
+/* line 3, /var/lib/stickshift/537cbe774382ec90ce0000af/app-root/data/869631/app */
+header,
+section,
+footer {
+  max-width: 100% !important;
+}
+/* line 5, /var/lib/stickshift/537cbe774382ec90ce0000af/app-root/data/869631/app */
+.side-nav li.level-0 {
+  margin-left: 0px;
+}
+/* line 6, /var/lib/stickshift/537cbe774382ec90ce0000af/app-root/data/869631/app */
+.side-nav li.level-1 {
+  margin-left: 10px;
+}

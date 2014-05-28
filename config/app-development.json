@@ -1,6 +1,6 @@
 {
 	"application_name": "Gaagii Dev",
-	"url_server": "http://p-gaagii-c9-samuelgavois.c9.io",
+	"url_server": "http://gaagii.herokuapp.com",
 	"databaseConfig": {
         "host": "ks3310836.kimsufi.com",
         "database": "gaagii"
