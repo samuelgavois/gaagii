@@ -29,11 +29,13 @@ passport.use(new GoogleStrategy(
 ));
 
 module.exports = function (app) {
-   	var model = new IndexModel();
 	app.get('/', function (req, res) {
-	        res.locals.context = { locality: nconf.get("locale") };
-	        res.render('index', model);
+	    res.locals.context = { locality: nconf.get("locale"), application_name: nconf.get("application_name") };
 	    
+	    var model =	{
+			config: { locality: nconf.get("locale"), application_name: nconf.get("application_name") }
+		};
+	    res.render('index', model);
    	});
 
 	app.get('/auth/google', 

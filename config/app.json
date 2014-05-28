@@ -1,4 +1,5 @@
 {
+	"application_name": "Gaagii Beta",
 	"url_server": "http://gaagii.herokuapp.com",
 	"databaseConfig": {
         "host": "ks3310836.kimsufi.com",

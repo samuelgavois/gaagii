@@ -9,7 +9,6 @@ var kraken = require('kraken-js'),
 
 app.configure = function configure(nconf, next) {
 	//Configure the database
-	console.log(nconf.get('databaseConfig'));
     db.config(nconf.get('databaseConfig'));
 	
     // Async method run on startup.
