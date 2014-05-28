@@ -1,6 +1,7 @@
 'use strict';
 
 var Document = require('../models/document');
+var Folder = require('../models/folder');
 var Patch = require('../models/patch');
 var dmpmod = require("../lib/diff_match_patch_uncompressed.js");
 var nconf = require('nconf');
@@ -146,11 +147,19 @@ module.exports = function (app) {
             if (err) {
                 console.log(err);
             }
-            var model = {
-                documents: docs
-            };
-			res.locals.context = { locality: nconf.get("locale") };
-            res.render('documents', model);
+            
+            Folder.find().exec(function (err, folders) {
+                if (err) {
+                    console.log(err);
+                }
+                
+                var model = {
+                    documents: docs,
+                    folders: folders
+                };
+    			res.locals.context = { locality: nconf.get("locale") };
+                res.render('documents', model);
+                });
         });
         
     });

@@ -2,18 +2,30 @@
 
 {<body}
 	<div class="large-12 columns">
-		<div class="large-7 columns"><h1>{@pre type="content" key="title"/}</h1></div>
-		<div class="large-5 columns menu-buttons">
-			<a class="button radius tiny" id="gaagii-button-create-document" href="#" data-reveal-id="gaagii-popup-create-document">{@pre type="content" key="menu.create.document"/}</a>
-		</div>
+		<h1>{@pre type="content" key="title"/}</h1>
 	</div>
-	<div class="large-12 columns">
-	    <div class="large-2 columns">
-	        <div class="panel">
-	            Dossiers
+	<div class="large-12 columns" data-equalizer>
+	    <div class="large-2 columns" data-equalizer-watch>
+	        <div class="panel radius">
+	            <a data-dropdown="gaagii-button-create-dropdown" class="large-12 columns button dropdown alert radius tiny" id="gaagii-button-create" href="#">{@pre type="content" key="menu.create.button"/}</a>
+	            <ul id="gaagii-button-create-dropdown" data-dropdown-content class="f-dropdown">
+                    <li><a id="gaagii-button-create-document" href="#" data-reveal-id="gaagii-popup-create-document">{@pre type="content" key="menu.create.document"/}</a></li>
+                    <li><a id="gaagii-button-create-folder" href="#" data-reveal-id="gaagii-popup-create-folder">{@pre type="content" key="menu.create.folder"/}</a></li>
+                </ul>
+	            
+	            {?folders}
+	                <ul class="side-nav">
+	                    <li class="active level-0"><a href="#">{@pre type="content" key="folders.no"/}</a></li>
+	                    {#folders}
+	                    <li class="level-1"><a href="#">{.name}</a></li>
+	                    {/folders}
+	                </ul>
+	            {:else}
+                    {@pre type="content" key="folders.no"/}
+                {/folders}
 	        </div>
 	    </div>
-	    <div class="large-10 columns">
+	    <div class="large-10 columns" data-equalizer-watch>
     		<div class="documents panel radius">
                 {?documents}
                 <table style="width:100%;">
@@ -43,7 +55,7 @@
 		</div>
 	</div>
 	
-	<div id="gaagii-popup-create-document" class="reveal-modal" data-reveal>
+	<div id="gaagii-popup-create-document" class="reveal-modal medium" data-reveal>
   		<h4>{@pre type="content" key="menu.create.document"/}</h4>
   		<form method="POST" action="/create-document" id="gaagii-form-document">
 			<div class="large-10 columns">
@@ -52,6 +64,39 @@
 			</div>
 			<div class="large-2 columns text-right">
 				<a class="button radius tiny" id="gaagii-popup-button-create-document" href="#">{@pre type="content" key="button.create.document"/}</a>
+			</div>
+		</form>
+	</div>
+	
+	<div id="gaagii-popup-create-folder" class="reveal-modal medium" data-reveal>
+  		<h4>{@pre type="content" key="menu.create.folder"/}</h4>
+  		<form method="POST" action="/create-folder" id="gaagii-form-folder">
+			<div class="large-10 columns">
+    			<input type="hidden" name="_csrf" value="{_csrf}">
+    			<div class="large-4 columns">
+    			    {@pre type="content" key="folder.name"/}
+    			</div>
+    			<div class="large-8 columns">
+    			    <input type="text" name="name" placeHolder="{@pre type="content" key="placeholder.field.folder"/}" value="">
+    			</div>
+    			<div class="large-4 columns">
+    			    {@pre type="content" key="folder.parent"/}
+    			</div>
+    			<div class="large-8 columns">
+        			{?folders}
+        			    <select name="idParent">
+        			        <option name="root">{@pre type="content" key="folders.no"/}</option>
+        			        {#folders}
+        			        <option name="{._id}">{.name}</option>
+        			        {/folders}
+        			    </select>
+                    {:else}
+                        <input type="hidden" name="idParent" value="root">
+                    {/folders}
+                </div>
+			</div>
+			<div class="large-2 columns text-right">
+				<a class="button radius tiny" id="gaagii-popup-button-create-folder" href="#">{@pre type="content" key="button.create.folder"/}</a>
 			</div>
 		</form>
 	</div>

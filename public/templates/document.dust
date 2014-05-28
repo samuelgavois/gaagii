@@ -2,15 +2,19 @@
 
 {<body}
 	{?document}
-	<div class="large-12 columns">
-		<div class="large-12 columns menu-buttons">
-			<a class="button radius alert tiny" id="gaagii-button-delete-document" href="#" data-id="{document._id}" data-csrf="{_csrf}" data-action="/delete-document" data-method="DELETE">{@pre type="content" key="menu.delete.document"/}</a>
-			<a class="button radius tiny" id="gaagii-button-share-document" href="#" data-reveal-id="gaagii-popup-share-document">{@pre type="content" key="menu.share.document"/}</a>
-			<a class="button radius tiny" id="gaagii-button-view-document" href="#">{@pre type="content" key="menu.view.document"/}</a>
-			<a class="button radius tiny" id="gaagii-button-save-document" href="#">{@pre type="content" key="menu.save.document"/}</a>
-		</div>
-	</div>
-	<div class="large-12 columns">
+	<div class="large-2 columns" data-equalizer-watch>
+	        <div class="panel radius">
+	            <a data-dropdown="gaagii-button-create-dropdown" class="large-12 columns button dropdown alert radius tiny" id="gaagii-button-create" href="#">Menu</a>
+	            <ul id="gaagii-button-create-dropdown" data-dropdown-content class="f-dropdown">
+                    <li><a id="gaagii-button-delete-document" href="#" data-id="{document._id}" data-csrf="{_csrf}" data-action="/delete-document" data-method="DELETE">{@pre type="content" key="menu.delete.document"/}</a></li>
+                    <li><a id="gaagii-button-share-document" href="#" data-reveal-id="gaagii-popup-share-document">{@pre type="content" key="menu.share.document"/}</a></li>
+                    <li><a id="gaagii-button-view-document" href="#">{@pre type="content" key="menu.view.document"/}</a></li>
+                    <li><a id="gaagii-button-save-document" href="#">{@pre type="content" key="menu.save.document"/}</a></li>
+                    <li><a id="gaagii-button-close-document" href="#">{@pre type="content" key="menu.close.document"/}</a></li>
+                </ul>
+	        </div>
+	    </div>
+	<div class="large-10 columns">
 		<form method="POST" action="/save-document" id="gaagii-form-document">
 			<input type="hidden" name="_id" value="{document._id}"/>
 			<input type="hidden" name="_csrf" value="{_csrf}">
@@ -25,7 +29,7 @@
 		</script>
 	</div>
 	
-	<div id="gaagii-popup-share-document" class="reveal-modal" data-reveal>
+	<div id="gaagii-popup-share-document" class="reveal-modal medium" data-reveal>
   		<h4>{@pre type="content" key="title.share.document"/}</h4>
   		<form method="POST" action="/share-document" id="gaagii-form-share-document">
 			<div class="large-10 columns">

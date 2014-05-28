@@ -5,6 +5,8 @@
 		<h1>{@pre type="content" key="application"/}</h1>
 	</div>
 	<div class="large-12 columns">
+	    <a href="/documents">Voir mes documents</a>
+	    <br/>
 		<a href="/auth/google">Sign In with Google</a>		
 	</div>
 {/body}

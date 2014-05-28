@@ -69,6 +69,11 @@
 			$("#gaagii-popup-button-share-document").bind("click.gaagii-popup-button-share-document", function(event) {
 				$("#gaagii-form-share-document").submit();
 			});
+			
+			//Fermer le document
+			$("#gaagii-button-close-document").bind("click.gaagii-button-close-document", function(event) {
+				document.location.href = "/documents";
+			});
 			//END DECLARATION DE TOUS LES EVENTS
 			
 			self.content = $("#gaagii-textarea-document").val();
