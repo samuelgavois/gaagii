@@ -11,9 +11,7 @@ module.exports = function (app) {
 	
 	app.get('/document/:id', function (req, res) {
 		Document.findOne({_id:req.param('id')}).exec(function (err, doc) {
-            if (err) {
-                console.log(err);
-            }
+            if (err) { throw err; }
 			
 			var dmp = new dmpmod.diff_match_patch();
 			var model =	{
@@ -28,9 +26,8 @@ module.exports = function (app) {
 				.where('idDocument').equals(doc._id)
 				.sort('createdDate')
 				.exec(function (err, patches) {
-					if (err) {
-						console.log(err);
-					}
+					if (err) { throw err; }
+					
 					for(var i = 0; i < patches.length; i++) {
 						model.patches.push(patches[i]);
 						var strpatch = dmp.patch_fromText(patches[i].patch);
@@ -64,7 +61,7 @@ module.exports = function (app) {
     });
     
     app.post('/create-document', function (req, res) {
-		var documentCreate = {name: req.body.name, content:""};
+		var documentCreate = {name: req.body.name, userId: nconf.get("userId"), content:""};
 		Document.create(documentCreate, function (err, doc) {
             if (err) { throw err; }
             console.log('Created document : '+ doc._id);
@@ -78,9 +75,7 @@ module.exports = function (app) {
 	app.post('/share-document', function (req, res) {
 	    var documentShare = {_id: req.body._id};
 	    Document.findOne({_id:req.body._id}).exec(function (err, doc) {
-            if (err) {
-                console.log(err);
-            }
+            if (err) { throw err; }
             
             var _urlDocument = nconf.get("url_server")+"/"+"document"+"/"+req.body._id;
             var _sender = nconf.get("sender");
@@ -130,6 +125,7 @@ module.exports = function (app) {
 		var documentDelete = {_id: req.body._id};
 		Document.remove(documentDelete, function (err) {
             if (err) { throw err; }
+            
             var patchDelete = {idDocument: req.body._id};
             Patch.remove(patchDelete, function (err) {
             	console.log('Deleted document : '+ req.body._id);

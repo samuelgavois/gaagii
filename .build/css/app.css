@@ -22,3 +22,7 @@ footer {
 .side-nav li.level-1 {
   margin-left: 10px;
 }
+/* line 8, /var/lib/stickshift/537cbe774382ec90ce0000af/app-root/data/869631/app */
+.uppercase {
+  text-transform: uppercase;
+}

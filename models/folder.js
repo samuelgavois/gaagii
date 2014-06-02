@@ -7,7 +7,9 @@ var FolderModel = function () {
     //Define a super simple schema for folder.
     var folderSchema = mongoose.Schema({
         name: String,
-        idParent: String
+        sort: Number,
+        userId: String,
+        childrens: Array
     });
 
     /**

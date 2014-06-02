@@ -8,15 +8,11 @@ module.exports = function (app) {
 
 
     app.get('/documents', function (req, res) {
-        Document.find().exec(function (err, docs) {
-            if (err) {
-                console.log(err);
-            }
+        Document.find({userId: nconf.get("userId")}).exec(function (err, docs) {
+            if (err) { throw err; }
             
-            Folder.find().exec(function (err, folders) {
-                if (err) {
-                    console.log(err);
-                }
+            Folder.find({userId: nconf.get("userId")}).exec(function (err, folders) {
+                if (err) { throw err; }
                 
                 var model = {
                     documents: docs,

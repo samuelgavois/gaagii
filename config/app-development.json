@@ -1,5 +1,6 @@
 {
 	"application_name": "Gaagii Dev",
+	"userId": "samuel.gavois",
 	"url_server": "http://gaagii.herokuapp.com",
 	"databaseConfig": {
         "host": "ks3310836.kimsufi.com",

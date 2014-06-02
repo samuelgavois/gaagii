@@ -4,7 +4,7 @@
 			//BEGIN DECLARATION DE TOUS LES EVENTS
 			//Création du dossier
 			$("#gaagii-button-create-folder").bind("click.gaagii-button-create-folder", function(event) {
-				setInterval(function() {
+				setTimeout(function() {
 					var $form = $("#gaagii-form-folder");
 					$form.find("[name='name']").focus();
 				}, 500);
@@ -28,7 +28,7 @@
 				$.ajax({
 					url: $form.attr('action'),
 					type: $form.attr('method'),
-					data: {_csrf:$form.find("[name='_csrf']").val(), name:$form.find("[name='name']").val(), idParent:$form.find("[name='idParent']").val()},
+					data: {_csrf:$form.find("[name='_csrf']").val(), name:$form.find("[name='name']").val(), idParent:$form.find("[name='idParent'] option:selected").attr("name")},
 					success: function(doc) {
 						document.location.href = "/documents";
 					}

@@ -4,7 +4,7 @@
 			//BEGIN DECLARATION DE TOUS LES EVENTS
 			//Création du document
 			$("#gaagii-button-create-document").bind("click.gaagii-button-create-document", function(event) {
-				setInterval(function() {
+				setTimeout(function() {
 					var $form = $("#gaagii-form-document");
 					$form.find("[name='name']").focus();
 				}, 500);
