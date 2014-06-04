@@ -9,7 +9,8 @@ var FolderModel = function () {
         name: String,
         sort: Number,
         userId: String,
-        childrens: Array
+        childrens: Array,
+        documents: Array,
     });
 
     /**

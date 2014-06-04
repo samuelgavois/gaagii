@@ -61,6 +61,7 @@
   		<form method="POST" action="/create-document" id="gaagii-form-document">
 			<div class="large-10 columns">
 			<input type="hidden" name="_csrf" value="{_csrf}">
+			<input type="hidden" name="folderId" value="{folders[0]._id}">
 			<input type="text" name="name" placeHolder="{@pre type="content" key="placeholder.field.document"/}" value="">
 			</div>
 			<div class="large-2 columns text-right">

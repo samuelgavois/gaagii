@@ -7,6 +7,7 @@ var DocumentModel = function () {
     //Define a super simple schema for document.
     var documentSchema = mongoose.Schema({
         name: String,
+        userId: String,
         content: String
     });
 

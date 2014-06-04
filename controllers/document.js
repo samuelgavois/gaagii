@@ -10,7 +10,7 @@ module.exports = function (app) {
 
 	
 	app.get('/document/:id', function (req, res) {
-		Document.findOne({_id:req.param('id')}).exec(function (err, doc) {
+		Document.findOne({_id:req.param('id'), userId: nconf.get("userId")}).exec(function (err, doc) {
             if (err) { throw err; }
 			
 			var dmp = new dmpmod.diff_match_patch();
@@ -44,7 +44,7 @@ module.exports = function (app) {
 	app.post('/save-document', function (req, res) {
 		var documentUpdate = {name: req.body.name};
 		
-		Document.update({_id:req.body._id}, documentUpdate, function (err) {
+		Document.update({_id:req.body._id, userId: nconf.get("userId")}, documentUpdate, function (err) {
             if (err) { throw err; }
             console.log('Updated document : '+ req.body._id);
             
@@ -66,14 +66,26 @@ module.exports = function (app) {
             if (err) { throw err; }
             console.log('Created document : '+ doc._id);
             
-            res.writeHead(200, { 'Content-Type': 'application/json' });
-            res.write(JSON.stringify(doc));
-            res.end();
+            //Rattachement au folder principal 'Mon Gaagii'
+            Folder.findOne({_id: req.body.folderId, userId: nconf.get("userId")}).exec(function (err, folder) {
+                if (err) { throw err; }
+                
+                folder.documents.push({documentId: doc._id});
+                folder.save(function(err, folder) {
+                    if (err) { throw err; }
+                    
+                    res.writeHead(200, { 'Content-Type': 'application/json' });
+                    res.write(JSON.stringify(doc));
+                    res.end();
+                });
+
+                
+            });
         });
     });
 	
 	app.post('/share-document', function (req, res) {
-	    var documentShare = {_id: req.body._id};
+	    var documentShare = {_id: req.body._id, userId: nconf.get("userId")};
 	    Document.findOne({_id:req.body._id}).exec(function (err, doc) {
             if (err) { throw err; }
             
@@ -122,7 +134,7 @@ module.exports = function (app) {
     });
     
     app.delete('/delete-document', function (req, res) {
-		var documentDelete = {_id: req.body._id};
+		var documentDelete = {_id: req.body._id, userId: nconf.get("userId")};
 		Document.remove(documentDelete, function (err) {
             if (err) { throw err; }
             
